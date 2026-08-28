@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": 1787887263019,
+  "updatedAt": 1787923726650,
   "packages": [
     {
       "id": "store-echo-demo",
@@ -13,6 +13,18 @@
       "sha256": "92c3e8db564a6066c652a7cd5f5c08f39d28e0a5dc43fc00ffec223994b01da1",
       "bytes": 14937,
       "updatedAt": 1787887263019
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode Integration",
+      "version": "1.0.0",
+      "description": "智影（Mira）OpenCode 一方集成包：opencode-data 数据守护进程 + mini-bridge 插件（自动部署到 ~/.config/opencode/plugins/）。适配 macOS Apple Silicon，与 Mira.app 内置集成包同源。",
+      "author": "Mira Team",
+      "trustLevel": "official",
+      "url": "https://raw.githubusercontent.com/jiyi1990118/mira-plugin-registry/main/opencode-1.0.0.zip",
+      "sha256": "0a2085ccdac2080b15be7ca59b9d9fb632b1113efcab632629e642082442ee25",
+      "bytes": 3189828,
+      "updatedAt": 1787923726650
     }
   ]
 }

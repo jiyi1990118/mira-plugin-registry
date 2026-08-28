@@ -21,7 +21,15 @@ https://raw.githubusercontent.com/jiyi1990118/mira-plugin-registry/main/registry
 
 拉取索引 → 选包 → 下载 zip → 核对 `sha256 + bytes` → 安全解压（路径穿越/符号链接防护）→ 校验清单 → 导入 `~/.local/share/mini/agents/<id>/`。
 
+## 当前包
+
+| id | 版本 | 信任级 | 说明 |
+|---|---|---|---|
+| `store-echo-demo` | 1.0.0 | official | ABP 桥接演示适配器（全平台，Bun） |
+| `opencode` | 1.0.0 | official | Mira OpenCode 一方集成包（opencode-data 守护进程 + mini-bridge 插件声明式部署）。**平台限制：macOS Apple Silicon（arm64）**；已装 Mira.app 的设备内置同源版本，此包供独立 hub 部署使用 |
+
 ## 镜像
+
 
 国内镜像：**`https://gitee.com/xiyuan/mira-plugin-registry`**（内容逐字节同步，消费地址 `https://gitee.com/xiyuan/mira-plugin-registry/raw/main/registry.json`）。
 
