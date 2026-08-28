@@ -10,7 +10,7 @@ Mira 设置中心 → **Agent 插件 → 插件商店** → 仓库地址填：
 https://raw.githubusercontent.com/jiyi1990118/mira-plugin-registry/main/registry.json
 ```
 
-（国内镜像仓库规划中，届时 hub 将按网络探测自动分流，见下方「镜像」。）
+国内网络可加配镜像（见下方「镜像」），hub 将并发探测、快者优先、失败自动切换。
 
 ## 仓库结构
 
@@ -23,8 +23,14 @@ https://raw.githubusercontent.com/jiyi1990118/mira-plugin-registry/main/registry
 
 ## 镜像
 
-国内访问 GitHub raw 不稳定时，将建立 Gitee 镜像仓库（内容逐字节同步）。
-hub 支持配置多仓库地址（主仓库 + 镜像），按「并发探测、快者优先、失败切换」策略自动选择，无需手工切换。
+国内镜像：**`https://gitee.com/xiyuan/mira-plugin-registry`**（内容逐字节同步，消费地址 `https://gitee.com/xiyuan/mira-plugin-registry/raw/main/registry.json`）。
+
+推荐双仓库配置（设置中心「插件商店」）：
+
+- 仓库地址：`https://raw.githubusercontent.com/jiyi1990118/mira-plugin-registry/main/registry.json`
+- 镜像：`https://gitee.com/xiyuan/mira-plugin-registry/raw/main/registry.json`
+
+hub 按「并发探测、快者优先、失败切换」策略自动选择，无需手工切换。
 
 ## 发布
 
@@ -36,4 +42,11 @@ node tools/registry-publish.mjs add <plugin.zip> --registry ./registry.json \
   --trust official --author "..."
 node tools/registry-publish.mjs verify --registry ./registry.json --strict
 git add registry.json <plugin.zip> && git commit -m "publish ..." && git push
+```
+
+发布后同步镜像（在本仓库克隆目录内）：
+
+```bash
+node tools/registry-publish.mjs sync --from . --to <gitee 镜像仓库克隆目录>
+cd <gitee 镜像仓库克隆目录> && git add -A && git commit -m "sync" && git push
 ```
