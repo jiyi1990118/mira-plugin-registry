@@ -46,11 +46,15 @@ hub 按「并发探测、快者优先、失败切换」策略自动选择，无�
 
 ```bash
 node tools/registry-publish.mjs add <plugin.zip> --registry ./registry.json \
-  --base-url https://raw.githubusercontent.com/jiyi1990118/mira-plugin-registry/main \
+  --url "<plugin>-<version>.zip" \
   --trust official --author "..."
 node tools/registry-publish.mjs verify --registry ./registry.json --strict
 git add registry.json <plugin.zip> && git commit -m "publish ..." && git push
 ```
+
+> **URL 规范（相对路径）**：条目 `url` 一律写成 zip 文件名（如 `opencode-1.0.0.zip`），
+> hub 安装时自动按**实际胜者仓库**解析（GitHub 胜 → 走 GitHub raw，Gitee 胜 → 走 Gitee raw），
+> 镜像因此自包含，慢仓/挂仓不再拖垮下载。绝对 URL 仍兼容（原样下载）。
 
 发布后同步镜像（在本仓库克隆目录内）：
 
