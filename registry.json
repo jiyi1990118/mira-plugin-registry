@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "updatedAt": 1787887263019,
+  "packages": [
+    {
+      "id": "store-echo-demo",
+      "name": "Store Echo Demo",
+      "version": "1.0.0",
+      "description": "Store Echo Demo",
+      "author": "Mira Team",
+      "trustLevel": "official",
+      "url": "https://raw.githubusercontent.com/jiyi1990118/mira-plugin-registry/main/store-echo-demo-1.0.0.zip",
+      "sha256": "92c3e8db564a6066c652a7cd5f5c08f39d28e0a5dc43fc00ffec223994b01da1",
+      "bytes": 14937,
+      "updatedAt": 1787887263019
+    }
+  ]
+}
